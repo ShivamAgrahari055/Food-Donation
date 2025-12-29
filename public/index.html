@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food Donation - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Food Donation Platform</h2>
+
+<div class="box">
+  <h3>Signup</h3>
+  <input id="s_email" placeholder="Email">
+  <input id="s_pass" type="password" placeholder="Password">
+  <input id="s_phone" placeholder="Phone Number">
+
+  <select id="s_role">
+    <option value="provider">Food Provider</option>
+    <option value="receiver">Food Receiver</option>
+  </select>
+
+  <button onclick="signupUser()">Signup</button>
+</div>
+
+<div class="box">
+  <h3>Login</h3>
+  <input id="l_email" placeholder="Email">
+  <input id="l_pass" type="password" placeholder="Password">
+  <button onclick="loginUser()">Login</button>
+</div>
+
+<script type="module" src="auth.js"></script>
+<script type="module">
+  import { auth } from "../firebase.js";
+  import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      location.href = "dashboard.html";
+    }
+  });
+</script>
+
+</body>
+</html>

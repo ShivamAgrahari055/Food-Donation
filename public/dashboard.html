@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head>
+<body>
+<button id="logoutBtn" class="logout">Logout</button>
+
+<h2 id="roleTitle"></h2>
+
+<!-- Provider Section -->
+<div id="providerBox" class="box" style="display:none">
+  <h3>Add Food</h3>
+  <input id="food_qty" placeholder="Food Quantity">
+  <input id="food_phone" placeholder="Phone Number">
+  <button onclick="addFood()">Add Food</button>
+</div>
+
+<!-- Receiver Section -->
+<div id="receiverBox" class="box" style="display:none">
+  <h3>Nearby Food (within 5 km)</h3>
+  <ul id="foodList"></ul>
+</div>
+
+<!-- Hungry Person Report (ALL USERS) -->
+<div class="box">
+  <h3>Report Hungry Person</h3>
+  <input id="note" placeholder="Description">
+  <button onclick="reportHungry()">Report</button>
+</div>
+
+<h3>Live Map</h3>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script type="module" src="role.js"></script>
+<script type="module" src="food.js"></script>
+<script type="module" src="report.js"></script>
+<script type="module" src="map.js"></script>
+<script type="module" src="logout.js"></script>
+
+</body>
+</html>
