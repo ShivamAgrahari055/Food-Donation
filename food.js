@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addFoodBtn.addEventListener("click", () => {
       const quantity = qtyInput.value.trim();
       const phone = phoneInput.value.trim();
-
+      
       if (!quantity || !phone) {
         alert("Please fill all fields");
         return;
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
           },
           status: "available",
           createdAt: Date.now(),
-          createdBy: user.uid
+          createdBy: auth.currentUser.uid
         });
 
         alert("Food added successfully");
