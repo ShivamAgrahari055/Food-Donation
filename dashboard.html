@@ -3,9 +3,16 @@
 <head>
   <title>Dashboard</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
 </head>
+
 <body>
+
 <button id="logoutBtn" class="logout">Logout</button>
 
 <h2 id="roleTitle"></h2>
@@ -15,27 +22,37 @@
   <h3>Add Food</h3>
   <input id="food_qty" placeholder="Food Quantity">
   <input id="food_phone" placeholder="Phone Number">
-  <button onclick="addFood()">Add Food</button>
-</div>
-
+  <button id="addFoodBtn">Add Food</button>
+</div >
+<h1 class="box">Don't waste ...Give the Needy!</h1>
 <!-- Receiver Section -->
-<div id="receiverBox" class="box" style="display:none">
-  <h3>Nearby Food (within 5 km)</h3>
+<div id="receiverBox" style="display:none">
+  
   <ul id="foodList"></ul>
 </div>
-
-<!-- Hungry Person Report (ALL USERS) -->
-<div class="box">
-  <h3>Report Hungry Person</h3>
-  <input id="note" placeholder="Description">
-  <button onclick="reportHungry()">Report</button>
+ 
+<!-- Admin Section -->
+<div id="adminBox" class="box" style="display:none">
+  <h4>Admin Panel</h4>
 </div>
 
+<!-- Hungry Person Report -->
+<div class="box" id="reportBox">
+  <h3>Report Hungry Person</h3>
+  <input id="note" placeholder="Description">
+  <button id="reportHungry">Report</button>
+</div>
+
+<h2>🧾 Hungry People Reports</h2>
+<div id="reportList">Loading...</div>
+
 <h3>Live Map</h3>
-<div id="map"></div>
+<div id="map" style="height: 500px;"></div>
 
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
+<!-- Your JS (MODULES) -->
 <script type="module" src="role.js"></script>
 <script type="module" src="food.js"></script>
 <script type="module" src="report.js"></script>
